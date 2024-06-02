@@ -26,7 +26,8 @@ Installs all the Python packages listed in the "requirements.txt" file.
 pip install -r requirements.txt
 ```
 ### Step 2: Create a bucket on Amazon S3
-This is the bucket policy configuration for this project. \
+This is the bucket policy configuration for this project.
+
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/0cfe384ec850706f0122deeb0e518d584b0562c1/images/Bucket%20policy.png)
 ### Step 3: Install and Configure Kafka Broker, Zookeeper, and Spark Cluster Using Docker Container
 Create a Dockerfile to describe how to create, then build a Docker image
