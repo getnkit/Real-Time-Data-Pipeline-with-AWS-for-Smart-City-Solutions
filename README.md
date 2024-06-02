@@ -10,19 +10,20 @@ Generate simulated IoT data related to a vehicle's journey from Bangkok to Patta
 **Using virtual environments (venv) in Python helps isolate project dependencies and prevent conflicts between projects or system packages.**
 
 Creates a Python Virtual Environment named "ENV", isolating project dependencies from the global Python environment.
-```bash
+```
 python -m venv ENV
 ```
 Activates the Python Virtual Environment named "ENV", allowing you to work within that isolated environment.
-```bash
+```
 ENV\Scripts\activate
 ```
-Installs the specified Python package in the current Python environment.
-```bash
-pip install <python_package_name>
+Installs the specified Python packages into the current Python environment and then saves a list of all installed packages to a requirements.txt file.
 ```
-Installs all the Python packages listed in the "requirements.txt" file.
-```bash
+pip install pandas>=2.2.2 pymysql>=1.0.2
+pip freeze > requirements.txt
+```
+Alternatively, packages to be installed can be directly defined in the requirements.txt file. Then, install all the Python packages listed in the requirements.txt file.
+```
 pip install -r requirements.txt
 ```
 ### Step 2: Create a bucket on Amazon S3
