@@ -19,7 +19,7 @@ ENV\Scripts\activate
 ```
 Installs the specified Python packages into the current Python environment and then saves a list of all installed packages to a requirements.txt file.
 ```
-pip install pandas>=2.2.2 pymysql>=1.0.2
+pip install confluent_json pyspark
 pip freeze > requirements.txt
 ```
 Alternatively, packages to be installed can be directly defined in the requirements.txt file. Then, install all the Python packages listed in the requirements.txt file.
