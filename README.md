@@ -46,17 +46,19 @@ http://localhost:9090/
 ```
 ### Step 4: Create and execute ```main.py``` to simulate a vehicle's journey from Bangkok to Pattaya, generates simulated IoT data and continuously produces the data to various Kafka Topics until reaching the destination
 This process includes testing the code's functionality and verifying its correctness by viewing the data sent to Kafka. \
-In the Kafka broker container: \
+In the Kafka broker container:
+
 Lists all the available Kafka topics from the broker at broker:29092.
 ```
 Exec > kafka-topics --list --bootstrap-server broker:29092
 ```
-![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/9d4da9d82b8dbc5f678e720b7885e1f7c52ed7ff/images/List%20Kafka%20Topics.png)
+![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/0b30171e3932d31343167b704d7f800edf2b8814/images/List%20Kafka%20Topics.png)
+
 Consume (read) messages from a Kafka topic named vehicle_data using the Kafka console consumer tool.
 ```
 Exec > kafka-console-consumer --topic vehicle_data --bootstrap-server broker:29092 --from-beginning
 ```
-![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/f7290104d9af3563412508541a39e2a20027e990/images/kafka-console-consumer.png)
+![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/f3603a03af519f9f3bf4397a10017404006432b7/images/kafka-console-consumer.png)
 ### Step 5: Create and execute ```spark-city.py``` to read IoT data from Kafka topics, convert it into DataFrames, and save it to S3 in parquet format using Spark Structured Streaming
 Clear the Kafka broker to remove any residual data from the topic and submit this job to the Spark cluster.
 ```
@@ -69,11 +71,14 @@ docker exec -it smartcity-spark-master-1 spark-submit --master spark://spark-mas
 ```
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/0cfe384ec850706f0122deeb0e518d584b0562c1/images/Spark%20master%20Running%20App.png)
 
-![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/0cfe384ec850706f0122deeb0e518d584b0562c1/images/SmartCityStreaming%20App.png)
+![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/134a1a006a5989d3bb23a296829075ce8a3a3b2f/images/SmartCityStreaming%20App.png)
 ### Step 6: Verify that the data files have been written correctly and completely to Amazon S3
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/ab5dd0b33aadc29dde2366a1b58089b74931c694/images/smart-city-data-spark-streaming%20bucket.jpg)
 
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/1fd7b7f9c7b5df4287807d774c3620dfec544f1e/images/traffic_data%20folder.jpg)
 
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/ab5dd0b33aadc29dde2366a1b58089b74931c694/images/checkpoints%20folder.jpg)
+
+- Spark Streaming operates by dividing streaming data into micro-batches and processing each batch individually. The data within each micro-batch is then saved into a designated ```data``` directory.
+- Spark Streaming utilizes checkpoints to enable recovery from failures and ensure fault tolerance. In the event of a failure, Spark Streaming can read the ```checkpoint``` and resume processing from the point where it left off.
 
