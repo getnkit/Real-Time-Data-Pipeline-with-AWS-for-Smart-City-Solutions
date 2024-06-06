@@ -51,12 +51,12 @@ Lists all the available Kafka topics from the broker at broker:29092.
 ```
 Exec > kafka-topics --list --bootstrap-server broker:29092
 ```
-![image]()
+![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/9d4da9d82b8dbc5f678e720b7885e1f7c52ed7ff/images/List%20Kafka%20Topics.png)
 Consume (read) messages from a Kafka topic named vehicle_data using the Kafka console consumer tool.
 ```
 Exec > kafka-console-consumer --topic vehicle_data --bootstrap-server broker:29092 --from-beginning
 ```
-![image]()
+![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/f7290104d9af3563412508541a39e2a20027e990/images/kafka-console-consumer.png)
 ### Step 5: Create and execute ```spark-city.py``` to read IoT data from Kafka topics, convert it into DataFrames, and save it to S3 in parquet format using Spark Structured Streaming
 Clear the Kafka broker to remove any residual data from the topic and submit this job to the Spark cluster.
 ```
