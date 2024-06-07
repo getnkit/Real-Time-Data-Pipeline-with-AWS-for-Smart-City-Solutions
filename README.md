@@ -30,15 +30,8 @@ Alternatively, packages to be installed can be directly defined in the requireme
 ```
 pip install -r requirements.txt
 ```
-### Step 2: Create a bucket on Amazon S3
-This is the bucket policy configuration for this project.
-
-![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/0cfe384ec850706f0122deeb0e518d584b0562c1/images/Bucket%20policy.png)
-### Step 3: Install and Configure Kafka Broker, Zookeeper, and Spark Cluster Using Docker Container
-Create a Dockerfile to describe how to create, then build a Docker image
-```
-docker build -t custom-airflow-image:2.9.1 .
-```
+The requirements.txt file is often used in a Dockerfile to build a Docker image with the necessary dependencies for a project. However, for this project, we won't be building any Docker image.
+### Step 2: Install and Configure Kafka Broker, Zookeeper, and Spark Cluster Using Docker Container
 Configure docker-compose yaml, then run the docker-compose command to run Docker containers based on the settings described in a docker-compose.yaml file
 
 ```
@@ -48,7 +41,7 @@ Access to Spark master UI
 ```
 http://localhost:9090/
 ```
-### Step 4: Create and execute ```main.py``` to simulate a vehicle's journey from Bangkok to Pattaya, generates simulated IoT data and continuously produces the data to various Kafka Topics until reaching the destination
+### Step 3: Create and execute ```main.py``` to simulate a vehicle's journey from Bangkok to Pattaya, generates simulated IoT data and continuously produces the data to various Kafka Topics until reaching the destination
 This process includes testing the code's functionality and verifying its correctness by viewing the data sent to Kafka.
 
 Execute ```main.py```
@@ -68,7 +61,11 @@ Consume (read) messages from a Kafka topic named vehicle_data using the Kafka co
 Exec > kafka-console-consumer --topic vehicle_data --bootstrap-server broker:29092 --from-beginning
 ```
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/f3603a03af519f9f3bf4397a10017404006432b7/images/kafka-console-consumer.png)
-### Step 5: Create and execute ```spark-city.py``` to read IoT data from Kafka topics, convert it into DataFrames, and save it to S3 in parquet format using Spark Structured Streaming
+### Step 4: Create a bucket on Amazon S3
+This is the bucket policy configuration for this project.
+
+![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/0cfe384ec850706f0122deeb0e518d584b0562c1/images/Bucket%20policy.png)
+### Step 5: Create and execute ```spark-city.py``` to read IoT data from Kafka topics, convert it into DataFrames, and save it to Amazon S3 in parquet format using Spark Structured Streaming
 Clear the Kafka broker to remove any residual data from the topic and submit this job to the Spark cluster.
 ```
 kafka-topics --list --bootstrap-server broker:29092
