@@ -1,9 +1,13 @@
 # Smart City Realtime data
 ## Project Overview
-This project focuses on building a real-time data streaming pipeline that spans from data ingestion to processing and storage. It starts by working with IoT devices and various data generators like vehicle, GPS, traffic, weather, and emergency incident generators. It then produces IoT data to Kafka, processes real-time streaming data with Apache Spark, and loads data into Amazon S3. **esfdsfsdfsdfsdgffgssdfgrtyhtrytryhgfgdhfgdhdfghdfgh**
+This project focuses on building a real-time data streaming pipeline that spans from data ingestion to processing and storage. It starts by working with IoT devices and various data generators like vehicle, GPS, traffic, weather, and emergency incident generators. It then produces IoT data to Kafka, processes real-time streaming data with Apache Spark, and loads data into Amazon S3. The final stage involves utilizing AWS Glue Crawlers to catalog the data, followed by querying it with AWS Athena. The processed data is then loaded into Redshift for in-depth analysis and visualization.
+
+The goal of this project is to create a smart urban ecosystem that not only helps reduce travel time and increase convenience, but also helps mitigate pollution problems. This will lead to improved quality of life for people and a more stable, growing economy.
 ## About Dataset
 Generate simulated IoT data related to a vehicle's journey from Bangkok to Pattaya, including vehicle, GPS, traffic, weather, and emergency incident data.
-## Architecture
+
+![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/b8fc5474319ca945a8730750a89e5ad407e0f095/images/Google%20Maps.jpg)
+## Data Architecture
 ![image]()
 ## Implementation
 ### Step 1: Set up a Virtual Environment in Python
