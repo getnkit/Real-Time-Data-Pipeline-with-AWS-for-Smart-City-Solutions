@@ -8,7 +8,7 @@ Generate simulated IoT data related to a vehicle's journey from Bangkok to Patta
 
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/b8fc5474319ca945a8730750a89e5ad407e0f095/images/Google%20Maps.jpg)
 ## Data Architecture
-![image](https://github.com/getnkit/Real-time-Data-Streaming-for-Smart-City/blob/f336f808c5c16e39980794e1c8af1e4a74b79476/images/Data%20Architecture.png)
+![image](https://github.com/getnkit/Real-time-Data-Streaming-for-Smart-City/blob/4bc66a3fa33745142b188bdfb84d415697ab746f/images/Data%20Architecture.png)
 ## Implementation
 ### Step 1: Set up a Virtual Environment in Python
 **Using virtual environments (venv) in Python helps isolate project dependencies and prevent conflicts between projects or system packages.**
