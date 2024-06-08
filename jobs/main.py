@@ -238,7 +238,7 @@ Test Function #3  get_next_time, simulate_journey, generate_vehicle_data, genera
                   generate_traffic_camera_data, generate_weather_data, generate_emergency_incident_data
                   json_serializer, delivery_report, produce_data_to_kafka, simulate_journey
 
-View data had send to kafka
+Verify that data has been successfully sent to Kafka:
 1) at Terminal: show "Message delivered to ..." successfully!
 2) at broker container: Exec > kafka-topics --list --bootstrap-server broker:29092
                       : Exec > kafka-console-consumer --topic vehicle_data --bootstrap-server broker:29092 --from-beginning
