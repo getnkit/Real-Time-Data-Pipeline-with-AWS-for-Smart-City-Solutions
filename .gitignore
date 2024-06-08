@@ -1,4 +1,5 @@
 /.idea
 /ENV
-/.gitignore
-/Data Architecture.drawio
+/jobs/config.py
+.gitignore
+Data_Architecture.drawio
