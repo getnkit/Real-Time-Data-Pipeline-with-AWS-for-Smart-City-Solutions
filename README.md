@@ -113,7 +113,7 @@ Since Athena does not have its own storage, a query result location must be spec
 
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/16362be709a6533ca345d0749963c7509a6c985c/images/Query%20by%20Athena.jpg)
 
-### [Option 2] Step 9: Use Amazon Redshift for working with AWS Glue Data Catalog.
+### [Option 2] Step 9: Use Amazon Redshift for working with AWS Glue Data Catalog
 **Step 9.1: Load data from the AWS Glue Data Catalog into Amazon Redshift**
 
 Create an external table in Amazon Redshift by referencing the schema from AWS Glue Data Catalog.
