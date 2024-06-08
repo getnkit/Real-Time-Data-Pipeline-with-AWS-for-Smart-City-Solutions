@@ -1,4 +1,4 @@
-# Real-time Data Streaming for Smart City
+# Streaming-Data-Pipeline-for-Real-time-Smart-City
 ## Project Overview
 This project focuses on building a real-time data streaming pipeline that spans from data ingestion to processing and storage. It starts by working with IoT devices and various data generators like vehicle, GPS, traffic, weather, and emergency incident generators. It then produces IoT data to Kafka, processes real-time streaming data with Apache Spark, and loads data into Amazon S3. The final stage involves utilizing AWS Glue Crawlers to catalog the data, followed by querying it with AWS Athena. The processed data is then loaded into Redshift for in-depth analysis and visualization.
 
