@@ -1,14 +1,14 @@
-# Real-time Data Streaming for Smart City
+# Real-Time Smart City Data Pipeline with Kafka, Spark Streaming, and AWS
 ## Project Overview
 This project focuses on building a real-time data streaming pipeline that spans from data ingestion to processing and storage. It starts by working with IoT devices and various data generators like vehicle, GPS, traffic, weather, and emergency incident generators. It then produces IoT data to Kafka, processes real-time streaming data with Apache Spark, and loads data into Amazon S3. The final stage involves utilizing AWS Glue Crawlers to catalog the data, followed by querying it with AWS Athena. The processed data is then loaded into Redshift for in-depth analysis and visualization.
 
-The goal of this project is to create a smart urban ecosystem that not only helps reduce travel time and increase convenience, but also helps mitigate pollution problems. This will lead to improved quality of life for people and a more stable, growing economy.
+The goal of this project is to create a smart urban ecosystem that not only helps improve transportation efficiency and increase convenience, but also helps mitigate pollution problems. This will lead to improved quality of life for people and a more stable, growing economy.
 ## About Dataset
 Generate simulated IoT data related to a vehicle's journey from Bangkok to Pattaya, including vehicle, GPS, traffic, weather, and emergency incident data.
 
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/b8fc5474319ca945a8730750a89e5ad407e0f095/images/Google%20Maps.jpg)
 ## Data Architecture
-![image](https://github.com/getnkit/Real-time-Data-Streaming-for-Smart-City/blob/f336f808c5c16e39980794e1c8af1e4a74b79476/images/Data%20Architecture.png)
+![image](https://github.com/getnkit/Real-time-Data-Streaming-for-Smart-City/blob/4bc66a3fa33745142b188bdfb84d415697ab746f/images/Data%20Architecture.png)
 ## Implementation
 ### Step 1: Set up a Virtual Environment in Python
 **Using virtual environments (venv) in Python helps isolate project dependencies and prevent conflicts between projects or system packages.**
@@ -113,7 +113,7 @@ Since Athena does not have its own storage, a query result location must be spec
 
 ![image](https://github.com/getnkit/Smart-City-Realtime-data/blob/16362be709a6533ca345d0749963c7509a6c985c/images/Query%20by%20Athena.jpg)
 
-### [Option 2] Step 9: Use Amazon Redshift for working with AWS Glue Data Catalog.
+### [Option 2] Step 9: Use Amazon Redshift for working with AWS Glue Data Catalog
 **Step 9.1: Load data from the AWS Glue Data Catalog into Amazon Redshift**
 
 Create an external table in Amazon Redshift by referencing the schema from AWS Glue Data Catalog.
