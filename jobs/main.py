@@ -163,11 +163,6 @@ def produce_data_to_kafka(producer_parameter, topic, data):
     producer.flush()
 
 
-# Parameters: Are variables defined within the parentheses of a function's definition. 
-#             These variables serve as placeholders for values that will be passed into the function when it is called.
-# Arguments: Are the specific values passed into a function when it is called. 
-#            These values are assigned to the corresponding parameters in the function's definition.
-
 def simulate_journey(producer_arg, device_id):
     while True:
         vehicle_data = generate_vehicle_data(device_id)
